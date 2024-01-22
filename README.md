@@ -1,74 +1,74 @@
-# Clinic Management System API
+# API de Sistema de Gerenciamento de Clínicas
 
-## Description
+## Descrição
 
-The Clinic Management System API has been developed to provide an efficient and centralized solution for the management of a medical clinic. With this API, it is possible to perform operations related to patients, doctors, appointments, and relevant information for the clinic's operation.
+A API do Sistema de Gerenciamento de Clínicas foi desenvolvida para fornecer uma solução eficiente e centralizada para o gerenciamento de uma clínica médica. Com esta API, é possível realizar operações relacionadas a pacientes, médicos, agendamentos e informações relevantes para o funcionamento da clínica.
 
-## Technologies Used
+## Tecnologias Utilizadas
 
-The project was developed using the following technologies:
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-- **Java**: Object-oriented programming language widely used for enterprise application development.
+- **Java**: Linguagem de programação orientada a objetos amplamente utilizada para o desenvolvimento de aplicativos empresariais.
 
-- **Spring Boot**: Framework that simplifies Java application development, offering minimal configuration and facilitating the creation of RESTful APIs.
+- **Spring Boot**: Framework que simplifica o desenvolvimento de aplicativos Java, oferecendo configuração mínima e facilitando a criação de APIs RESTful.
 
-- **MySQL**: Relational database management system, used to store the system's data.
+- **MySQL**: Sistema de gerenciamento de banco de dados relacional, utilizado para armazenar os dados do sistema.
 
-- **Flyway**: Database versioning tool that simplifies migration and versioning of the database schema.
+- **Flyway**: Ferramenta de versionamento de banco de dados que simplifica a migração e versionamento do esquema do banco de dados.
 
-## Features
+## Funcionalidades
 
-The Clinic Management System API offers the following features:
+A API do Sistema de Gerenciamento de Clínicas oferece as seguintes funcionalidades:
 
-1. **Patient Registration**: Allows the inclusion, updating, removal, and consultation of patient information.
+1. **Cadastro de Pacientes**: Permite a inclusão, atualização, remoção e consulta de informações do paciente.
 
-2. **Doctor Registration**: Enables complete management of doctor information, including addition, editing, deletion, and querying.
+2. **Cadastro de Médicos**: Possibilita o gerenciamento completo das informações do médico, incluindo adição, edição, exclusão e consulta.
 
-3. **Appointment Scheduling**: Provides resources for scheduling appointments, querying appointments, and canceling scheduled appointments.
+3. **Agendamento de Consultas**: Fornece recursos para agendar consultas, consultar agendamentos e cancelar consultas agendadas.
 
-## Usage Instructions
+## Instruções de Uso
 
-### Prerequisites
+### Pré-requisitos
 
-- Java 8 or higher installed
-- MySQL installed and configured
-- Maven installed
+- Java 8 ou superior instalado
+- MySQL instalado e configurado
+- Maven instalado
 
-### Database Configuration
+### Configuração do Banco de Dados
 
-1. Create a database in MySQL for the project.
-2. Configure the database properties in the `application.properties` file.
+1. Crie um banco de dados no MySQL para o projeto.
+2. Configure as propriedades do banco de dados no arquivo `application.properties`.
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/your_database
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+spring.datasource.url=jdbc:mysql://localhost:3306/seu_banco_de_dados
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
 ```
-## Running the Project
 
-1. Clone the project repository:
+## Executando o Projeto
+
+1. Clone o repositório do projeto:
 
 ```bash
-    git clone https://github.com/AugustoSandrini/vollmed-api
+git clone https://github.com/AugustoSandrini/vollmed-api
 ```
 
-2. Navigate to the project directory:
+2. Navegue até o diretório do projeto:
 
 ```bash
-    cd vollmed-api
+cd vollmed-api
 ```
 
-3. Run the project using Maven:
+3. Execute o projeto usando o Maven:
 
 ```bash
-    mvn spring-boot:run
+mvn spring-boot:run
 ```
-The API will be available at http://localhost:8080.
 
-## Contribuitions
+- A API estará disponível em http://localhost:8080.
 
-- Contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to create an issue or submit a pull request.
+## Contribuições
+- Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para criar uma issue ou enviar um pull request.
 
-## License
-
-- This project is licensed under the MIT License.
+## Licença
+- Este projeto está licenciado sob a Licença MIT.

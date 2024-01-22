@@ -25,12 +25,36 @@ public class Medico {
     @Embedded
     private Endereco endereco;
 
+    private Boolean ativo;
+
     public Medico(DadosCadastroMedicos dados) {
+        this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();
         this.crm = dados.crm();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
+    }
+
+    public void atualizarInformacoes(DadosAtualizacaoMedicos dadosAtualizacaoMedicos) {
+
+        this.nome = atualizarPropriedade(dadosAtualizacaoMedicos.nome(), this.nome);
+        this.telefone = atualizarPropriedade(dadosAtualizacaoMedicos.telefone(), this.telefone);
+
+        if(dadosAtualizacaoMedicos.endereco() != null) {
+            if(this.endereco == null) {
+                this.endereco = new Endereco();
+            }
+            this.endereco.atualizarInformacoes(dadosAtualizacaoMedicos.endereco());
+        }
+    }
+
+    private String atualizarPropriedade(String novoValor, String valorAntigo) {
+        return (novoValor != null) ? novoValor : valorAntigo;
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }

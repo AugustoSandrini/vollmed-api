@@ -16,6 +16,10 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - **Flyway**: Ferramenta de versionamento de banco de dados que simplifica a migração e versionamento do esquema do banco de dados.
 
+- **JWT (JSON Web Token)**: Tecnologia de autenticação baseada em tokens que permite a transmissão segura de informações entre as partes, proporcionando uma forma eficiente de autenticação.
+
+- **Auth0**: Plataforma de autenticação e autorização que oferece serviços de identidade seguros e escaláveis, facilitando a integração de recursos avançados de autenticação no projeto.
+
 ## Funcionalidades
 
 A API do Sistema de Gerenciamento de Clínicas oferece as seguintes funcionalidades:

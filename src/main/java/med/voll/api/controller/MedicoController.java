@@ -5,6 +5,9 @@ import med.voll.api.domain.medico.DadosListagemMedicos;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.medico.MedicoRepository;
 import med.voll.api.domain.medico.*;
+
+import java.net.URI;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -28,14 +31,14 @@ public class MedicoController {
         var medico = new Medico(dadosCadastroMedicos);
         medicoRepository.save(medico);
 
-        var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
+        URI uri = uriBuilder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoMedico(medico));
     }
 
     @GetMapping
     public ResponseEntity<Page<DadosListagemMedicos>> listarMedicos(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
-       var page = medicoRepository.findAllByAtivoTrue(paginacao).map(DadosListagemMedicos::new);
+       Page<DadosListagemMedicos> page = medicoRepository.findAllByAtivoTrue(paginacao).map(DadosListagemMedicos::new);
 
        return ResponseEntity.ok(page);
     }

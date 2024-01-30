@@ -1,15 +1,19 @@
 package med.voll.api.domain.paciente;
 
+import java.util.Map;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import med.voll.api.domain.endereco.Endereco;
 
 @Table(name = "pacientes")
 @Entity(name = "Paciente")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -42,7 +46,7 @@ public class Paciente {
 
         if(dadosAtualizacaoPacientes.endereco() != null) {
             if(this.endereco == null) {
-                this.endereco = new Endereco();
+                this.endereco = new Endereco(null);
             }
             this.endereco.atualizarInformacoes(dadosAtualizacaoPacientes.endereco());
         }
@@ -55,4 +59,5 @@ public class Paciente {
     public void excluir() {
         this.ativo = false;
     }
+
 }

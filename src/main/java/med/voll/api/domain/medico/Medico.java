@@ -7,6 +7,7 @@ import med.voll.api.domain.endereco.Endereco;
 @Table(name = "medicos")
 @Entity(name = "Medico")
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -44,7 +45,7 @@ public class Medico {
 
         if(dadosAtualizacaoMedicos.endereco() != null) {
             if(this.endereco == null) {
-                this.endereco = new Endereco();
+                this.endereco = new Endereco(null);
             }
             this.endereco.atualizarInformacoes(dadosAtualizacaoMedicos.endereco());
         }

@@ -5,6 +5,9 @@ import med.voll.api.domain.paciente.DadosListagemPacientes;
 import med.voll.api.domain.paciente.Paciente;
 import med.voll.api.domain.paciente.PacienteRepository;
 import med.voll.api.domain.paciente.*;
+
+import java.net.URI;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,10 +27,10 @@ public class PacienteController {
     @PostMapping
     @Transactional
     public ResponseEntity<Object> cadastrarPaciente(@RequestBody @Valid DadosCadastroPaciente dadosCadastroPaciente, UriComponentsBuilder uriBuilder){
-        var paciente = new Paciente(dadosCadastroPaciente);
+        Paciente paciente = new Paciente(dadosCadastroPaciente);
         pacienteRepository.save(paciente);
 
-        var uri = uriBuilder.path("/pacientes/{id}").buildAndExpand(paciente.getId()).toUri();
+        URI uri = uriBuilder.path("/pacientes/{id}").buildAndExpand(paciente.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoPaciente(paciente));
     }
